@@ -1,6 +1,6 @@
 import { DollarSign } from 'lucide-react';
 import { tabs } from '../assets/data';
-import Navitem from './Navitem';
+import Navitem from './UI/Navitem';
 
 const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
   const handleClick = (tabName) => {
@@ -10,7 +10,7 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
   return (
     <div className="flex flex-col h-full">
       {/* Logo Section */}
-      <div className="flex items-center space-x-2 mb-8">
+      <div className="flex items-center space-x-2 mb-8 group cursor-pointer">
         <div className="bg-zinc-200 p-2 rounded-lg">
           <DollarSign size={24} className="text-zinc-700" />
         </div>
