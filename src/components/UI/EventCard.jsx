@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 const EventCard = function ({ time, title, participants, icon: Icon }) {
   return (
-    <div className="bg-white/90 p-3 rounded-lg flex items-center  space-x-3 hover:bg-zinc-100 text-zinc-600">
+    <div className="bg-white/90 p-3 rounded-lg flex items-center  space-x-3 hover:bg-white card-hover cursor-pointer text-zinc-600">
       <div className="size-8 flex items-center justify-center bg-white rounded-full border border-zinc-200 text-zinc-600">
         <Icon size={26} />
       </div>
-      <div className="flex1">
+      <div className="flex-1">
         <p className="text-xs text-zinc-500">{time}</p>
         <p className="text-sm font-medium text-zinc-900 mb-1">{title}</p>
 
