@@ -1,5 +1,28 @@
+import { useState } from 'react';
+import DashboardLayout from './components/DashboardLayout';
+import LoginScreen from './components/LoginScreen';
+
 const App = () => {
-  return <div className="bg-blue-500 text-white p-4 text-2xl">App</div>;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  //Conditional rendering based on login state
+  if (!isLoggedIn) {
+    return <LoginScreen onLogin={handleLogin} />;
+  }
+
+  return (
+    <div className="min-h-screen bg-zinc-50">
+      <DashboardLayout />
+    </div>
+  );
 };
 
 export default App;
