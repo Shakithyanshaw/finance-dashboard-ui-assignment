@@ -24,17 +24,14 @@ const AccountCard = ({
           <p className="text-sm font-medium text-zinc-900">{name}</p>
           <p className="text-xs text-zinc-600">{description}</p>
         </div>
-
-        <div>
-          {actionLabel && (
-            <span
-              className={`text-xs font-semibold px-2 py-1 rounded-full ${actionColor}`}
-            >
-              {actionLabel}
-            </span>
-          )}
-        </div>
       </div>
+      {actionLabel && (
+        <span
+          className={`text-xs font-semibold px-2 py-1 rounded-full ${actionColor}`}
+        >
+          {actionLabel}
+        </span>
+      )}
     </div>
   );
 };

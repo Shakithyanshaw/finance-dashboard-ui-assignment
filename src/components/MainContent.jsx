@@ -1,6 +1,16 @@
-import { Bell, Goal, Landmark, Search, TrendingDown } from 'lucide-react';
+import {
+  Bell,
+  Droplet,
+  ForkKnife,
+  Goal,
+  Landmark,
+  Search,
+  ShoppingBasket,
+  TrendingDown,
+} from 'lucide-react';
 import ExpenseSummaryCard from './UI/ExpenseSummaryCard';
 import ListItemCard from './UI/ListItemCard';
+import AccountCard from './UI/AccountCard';
 
 const MainContent = () => {
   return (
@@ -87,8 +97,53 @@ const MainContent = () => {
             />
           </div>
         </div>
-
         {/*Budgets*/}
+        <div className="p-6">
+          <h3 className="text-lg tracking-tight font-bold text-zinc-900 mb-4 flex justify-between items-center">
+            My Budgets
+            <button className="text-sm font-normal cursor-pointer text-blue-600 hover:underline">
+              Manage All
+            </button>
+          </h3>
+          <div className="space-y-3">
+            <AccountCard
+              name="Groceries"
+              description="Spending: $450/ $600"
+              actionLabel="75% Used"
+              actionColor="bg-red-100 text-red-700"
+              Icon={ShoppingBasket}
+              bgColor="bg-emerald-100"
+              iconColor="text-emerald-700"
+            />
+            <AccountCard
+              name="Restaurants"
+              description="Spending: $120/ $300"
+              actionLabel="40% Used"
+              actionColor="bg-green-100 text-green-700"
+              Icon={ForkKnife}
+              bgColor="bg-amber-100"
+              iconColor="text-amber-700"
+            />
+            <AccountCard
+              name="Utilities"
+              description="Spending: $200/ $200"
+              actionLabel="100% Used"
+              actionColor="bg-red-500 text-white"
+              Icon={Droplet}
+              bgColor="bg-blue-100"
+              iconColor="text-blue-700"
+            />
+            <AccountCard
+              name="Entertainment"
+              description="Spending: $50/ $150"
+              actionLabel="33% Used"
+              actionColor="bg-blue-100 text-blue-700"
+              Icon={ForkKnife}
+              bgColor="bg-pink-100"
+              iconColor="text-pink-700"
+            />
+          </div>
+        </div>
       </div>
 
       {/*Shedule Payments*/}
