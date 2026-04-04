@@ -14,10 +14,10 @@ const ExpenseSummaryCard = ({
       <div className="col gap-16 md:gap-12">
         <p className="text-sm text-zinc-600 mb-1">{lable}</p>
         <p className="text-2xl font-bold text-zinc-900">{amount}</p>
+      </div>
 
-        <div className={`p-2 rounded-full bg-white`}>
-          <Icon size={20} className={`${iconColor}`} />
-        </div>
+      <div className={`p-2 rounded-full bg-white`}>
+        <Icon size={20} className={`${iconColor}`} />
       </div>
     </div>
   );

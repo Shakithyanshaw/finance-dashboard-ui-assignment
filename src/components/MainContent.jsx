@@ -1,4 +1,5 @@
-import { Bell, Search } from 'lucide-react';
+import { Bell, Goal, Landmark, Search, TrendingDown } from 'lucide-react';
+import ExpenseSummaryCard from './UI/ExpenseSummaryCard';
 
 const MainContent = () => {
   return (
@@ -24,7 +25,29 @@ const MainContent = () => {
         </div>
       </div>
       {/*Expence Summary Cards*/}
-
+      <div className="grid md:grid-cols-3 gap-6">
+        <ExpenseSummaryCard
+          lable="Spent This Month"
+          amount="$1,850"
+          icon={TrendingDown}
+          colorClass="bg-pink-200"
+          iconColor="text-red-500"
+        />
+        <ExpenseSummaryCard
+          lable="Spent This Month"
+          amount="$450"
+          icon={Goal}
+          colorClass="bg-blue-200"
+          iconColor="text-emerald-500"
+        />
+        <ExpenseSummaryCard
+          lable="Highest Category"
+          amount="Groceries"
+          icon={Landmark}
+          colorClass="bg-emerald-200"
+          iconColor="text-orange-500"
+        />
+      </div>
       {/*Recent T ransaction & Budgets*/}
 
       {/*Shedule Payments*/}
