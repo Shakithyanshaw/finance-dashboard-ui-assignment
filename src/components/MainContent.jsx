@@ -1,5 +1,6 @@
 import { Bell, Goal, Landmark, Search, TrendingDown } from 'lucide-react';
 import ExpenseSummaryCard from './UI/ExpenseSummaryCard';
+import ListItemCard from './UI/ListItemCard';
 
 const MainContent = () => {
   return (
@@ -48,7 +49,47 @@ const MainContent = () => {
           iconColor="text-orange-500"
         />
       </div>
-      {/*Recent T ransaction & Budgets*/}
+      {/*Recent Transaction & Budgets*/}
+      <div className="grid lg:grid-cols-2 gap-6">
+        <div className="p-6">
+          <h3 className="text-lg tracking-tight font-bold text-zinc-900 mb-4">
+            Recend Spending
+          </h3>
+
+          <div className="space-y-3">
+            <ListItemCard
+              title="Supermarket Run"
+              subTitle="Groceries"
+              value="-$85.00"
+              valueColor="text-red-600"
+              src="/user-2.png"
+            />
+            <ListItemCard
+              title="Online Subscription"
+              subTitle="Software"
+              value="-$19.99"
+              valueColor="text-red-600"
+              src="/user-3.png"
+            />
+            <ListItemCard
+              title="ATM Withdrawal"
+              subTitle="Cash"
+              value="-$100.00"
+              valueColor="text-red-600"
+              src="/user-4.png"
+            />
+            <ListItemCard
+              title="Paycheck Deposit"
+              subTitle="Income"
+              value="+$3,500.00"
+              valueColor="text-green-600"
+              src="/user-5.png"
+            />
+          </div>
+        </div>
+
+        {/*Budgets*/}
+      </div>
 
       {/*Shedule Payments*/}
     </div>
