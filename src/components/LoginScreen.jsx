@@ -1,10 +1,24 @@
+import { useState } from 'react';
 import { DollarSign, Lock, User } from 'lucide-react';
 
 const LoginScreen = ({ onLogin }) => {
-  // Handle form submission
+  const [email, setEmail] = useState(''); // user input email
+  const [password, setPassword] = useState(''); // user input password
+  const [error, setError] = useState(''); // error message
+
+  // Static credentials
+  const STATIC_EMAIL = 'demo@example.com';
+  const STATIC_PASSWORD = 'password123';
+
   const handleLogin = (e) => {
     e.preventDefault();
-    onLogin();
+
+    if (email === STATIC_EMAIL && password === STATIC_PASSWORD) {
+      setError('');
+      onLogin(); // call parent on successful login
+    } else {
+      setError('Invalid email or password'); // show error
+    }
   };
 
   return (
@@ -23,6 +37,11 @@ const LoginScreen = ({ onLogin }) => {
           </p>
         </div>
 
+        {/* Error Message */}
+        {error && (
+          <p className="text-red-500 text-sm mb-4 text-center">{error}</p>
+        )}
+
         {/* Login Form */}
         <form onSubmit={handleLogin} className="space-y-4 sm:space-y-6">
           {/* Email/Username */}
@@ -40,8 +59,9 @@ const LoginScreen = ({ onLogin }) => {
               <input
                 type="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
-                defaultValue="demo@example.com"
                 className="block w-full pl-10 pr-3 py-2 sm:py-2.5 border border-zinc-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
               />
             </div>
@@ -63,8 +83,9 @@ const LoginScreen = ({ onLogin }) => {
                 type="password"
                 name="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
-                defaultValue="password123"
                 className="block w-full pl-10 pr-3 py-2 sm:py-2.5 border border-zinc-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
               />
             </div>
