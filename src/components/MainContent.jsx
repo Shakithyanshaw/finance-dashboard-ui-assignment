@@ -11,6 +11,7 @@ import {
 import ExpenseSummaryCard from './UI/ExpenseSummaryCard';
 import ListItemCard from './UI/ListItemCard';
 import AccountCard from './UI/AccountCard';
+import Payments from './UI/Payments';
 
 const MainContent = () => {
   return (
@@ -147,6 +148,7 @@ const MainContent = () => {
       </div>
 
       {/*Shedule Payments*/}
+      <Payments />
     </div>
   );
 };
