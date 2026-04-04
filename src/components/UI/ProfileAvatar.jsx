@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 const ProfileAvatar = ({ name, title, src }) => {
   return (
     <div className="text-center">
-      <div className="w-20 h-20 mx-auto bg-zinc-200 rounded-full overflow-hidden mb-3 flex items-center justify-center text-zinc-500 text-lg">
+      <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-zinc-200 rounded-full overflow-hidden mb-3 flex items-center justify-center text-zinc-500 text-lg">
         {src ? (
           <img src={src} alt="profile-image" className="size-full" />
         ) : (

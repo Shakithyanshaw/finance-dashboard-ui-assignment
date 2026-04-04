@@ -2,9 +2,14 @@ import { DollarSign } from 'lucide-react';
 import { tabs } from '../assets/data';
 import Navitem from './UI/Navitem';
 
-const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
+const Sidebar = ({ activeTab, setActiveTab, onLogout, setShowSidebar }) => {
   const handleClick = (tabName) => {
     setActiveTab(tabName);
+
+    // ✅ close sidebar on mobile
+    if (setShowSidebar) {
+      setShowSidebar(false);
+    }
   };
 
   return (
@@ -35,7 +40,10 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
       <div className="mt-auto pt-6 border-t border-zinc-100">
         {/* Logout Button */}
         <button
-          onClick={onLogout}
+          onClick={() => {
+            onLogout();
+            if (setShowSidebar) setShowSidebar(false);
+          }}
           className="w-full flex items-center justify-center space-x-2 p-3 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 transition-colors cursor-pointer"
         >
           Logout
